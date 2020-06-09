@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Solution",
+            "request": "launch",
+            "mainClass": "Solution",
+            "projectName": "JavaVSCode_4abf37ba"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "JavaVSCode_4abf37ba"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - myfirst",
+            "request": "launch",
+            "mainClass": "myfirst"
+        }
+    ]
+}

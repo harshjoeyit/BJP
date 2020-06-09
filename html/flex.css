@@ -1,0 +1,48 @@
+.all-center {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(186, 121, 248);
+}
+
+.space-bet {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(248, 199, 121);
+}
+
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 155, 197);
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(129, 240, 250);
+}
+  
+.flex-container > div, .vertical-flex > div, .all-center > div, .space-bet > div{
+    background-color: #f1f1f1;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+
+/* perfect center alignment */
+.center-flex {
+    display: flex;
+    /* for horizontal alignment */
+    justify-content: center;
+    /* for vertical alignment */
+    align-items: center;
+    
+    height: 600px;
+    background-color: rgb(178, 255, 115);
+}
+
+

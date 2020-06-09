@@ -1,0 +1,4 @@
+haey this is second line 
+this is the end
+reload
+some text in file

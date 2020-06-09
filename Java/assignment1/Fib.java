@@ -1,0 +1,18 @@
+import java.lang.*;
+
+class Fib
+{
+	int fibonacci( int n )
+	{
+		if( n == 1 || n == 2 )
+			return 1;
+		return ( fibonacci(n-1) + fibonacci(n-2));
+	}
+	public static void main( String arg[] )
+	{
+		int n = 10;
+		Fib f = new Fib();
+		for( int i = 1; i<n; i++ )
+			System.out.println( f.fibonacci(i) );
+	}
+};

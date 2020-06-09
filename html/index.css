@@ -1,0 +1,90 @@
+h1{
+    background-color: aqua;
+}
+
+#grad {
+    background-image: radial-gradient(circle, rgb(0, 66, 92), rgb(16, 163, 163), rgb(255, 255, 255));    
+    height: 400px;
+    width: 400px;
+}
+.polaroid{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 400px;
+}
+img{
+    width: 400px;
+}
+p{
+    text-align: center;
+    padding: 10px 20px;
+    word-wrap: break-word;
+}
+
+
+
+/* flowin */
+div.flow-in{
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    background-color: blueviolet;
+    position: relative;
+    left: 90%;
+    animation-name: flow;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused; 
+    animation-timing-function: ease-out;
+    margin: 4px;
+}
+
+@keyframes flow{
+    from{left: 90%; background-color: blueviolet;}
+    to{left: 10px; transform: rotate(360deg); background-color: rgb(0, 255, 98);}
+}
+
+div.play{
+    background-color: rgb(0, 255, 98);
+    animation-play-state: running;
+}
+
+div.flow-in-2{
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    background-color: rgb(250, 66, 106);
+    position: relative;
+    left: 90%;
+    transition: left 1s, transform 1s, background-color 1s;
+    transition-timing-function: ease-in;
+    margin: 4px;
+}
+
+div.play2{
+    left: 10px;
+    transform: rotate(360deg);
+    background-color: rgb(111, 0, 255);
+}
+
+
+
+/* .................newarpaper...... .............. */
+
+.newspaper {
+  column-count: 3;
+  column-width: 100px;
+  margin: 20px;
+}
+/* css variables */
+
+:root {
+    --main-bg-color: coral;
+    --main-txt-color: blue;  
+    --main-padding: 15px;  
+  }
+
+#div1 {
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-color);  
+  padding: var(--main-padding);
+}
