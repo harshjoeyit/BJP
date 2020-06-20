@@ -91,30 +91,30 @@
 
 
 // refactoring into Promises
-var counter = 0;
-function incCounter() {
-      counter++;
-      console.log("counter: " + counter);
-}
+// var counter = 0;
+// function incCounter() {
+//       counter++;
+//       console.log("counter: " + counter);
+// }
 
-function runLater(callback, timeInMs) {
-      var p = new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                  callback();
-                  resolve();
-            }, timeInMs);
-      });
-      // returns a promise
-      return p;
-}
+// function runLater(callback, timeInMs) {
+//       var p = new Promise(function (resolve, reject) {
+//             setTimeout(function () {
+//                   callback();
+//                   resolve();
+//             }, timeInMs);
+//       });
+//       // returns a promise
+//       return p;
+// }
 
-runLater(incCounter, 1000).then(function () {
-      return runLater(incCounter, 2000);
-}).then(function () {
-      return runLater(incCounter, 3000);
-}).then(function () {
-      // console.log("finished!");
-});
+// runLater(incCounter, 1000).then(function () {
+//       return runLater(incCounter, 2000);
+// }).then(function () {
+//       return runLater(incCounter, 3000);
+// }).then(function () {
+//       // console.log("finished!");
+// });
 
 
 

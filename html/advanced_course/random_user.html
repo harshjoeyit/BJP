@@ -102,7 +102,7 @@
             btn.addEventListener('click', function () {
                   generateRandomUser();
             })
-            var name = document.querySelector("#details h2");
+            var fullname = document.querySelector("#details h2");
             var username = document.querySelector("#details h3");
             var info = document.querySelectorAll("#details h4 span");
             var email = info[0];
@@ -133,7 +133,7 @@
             }
             function updateProfile(data) {
                   var user = data.results[0];
-                  name.innerText = user.name.title + " " + user.name.first + " " + user.name.last;
+                  fullname.innerText = user.name.title + " " + user.name.first + " " + user.name.last
                   username.innerText = "@" + user.login.username;
                   email.innerText = user.email;
                   from.innerText = user.location.country + ", " + user.location.city;
