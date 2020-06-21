@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
+      <title>Start Afresh!</title>
+      <style>
+            *{
+                  box-sizing: border-box;
+            }
+            body {
+                  margin: 0;
+                  padding: 0;
+                  font-family: 'Titillium Web' ,monospace, sans-serif;
+                  background-color: rgb(224, 249, 255);     
+            }
+            #myAge {
+                  height: 80vh;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: column;
+                  letter-spacing: 0.15em;
+                  font-weight: 700;
+            }
+            #age {
+                  font-size: 30px;
+                  position: relative;
+                  left: -160px;
+                  top: 50px;
+                  color: rgb(199, 199, 199);
+            }
+            #intAge {
+                  font-size: 140px;
+            }
+            #decAge {
+                  font-size: 40px;
+                  position: relative;
+                  top: -60px;
+            }
+      </style>
+</head>
+<body>
+      <div id="myAge">
+            <div id="age">AGE</div>
+            <div><span id="intAge"></span><span id="decAge"></span></div>
+      </div>
+      <script>
+            var age, daysBetweenDates;
+            daysBetweenDates = function (d1, d2) {
+                  var diffDays, oneDay;
+                  oneDay = 24 * 60 * 60 * 1000;
+                  diffDays = (d2 - Date.parse(d1)) / oneDay;
+                  return diffDays;
+            };
+
+            age = function () {
+                  var raw = daysBetweenDates('Nov 14, 1999 00:00:00', new Date()) / 365;
+                  var int_age = Math.round(raw)-1;
+                  var dec_age = raw - int_age;
+                  dec_age = dec_age.toFixed(9);
+                  var dec_age_trimmed = dec_age.toString().substr(1);
+                  
+                  // console.log(dec_age);
+
+                  document.getElementById("intAge").innerText = int_age;
+                  document.getElementById("decAge").innerText = dec_age_trimmed;
+            };
+
+            setInterval(age, 200);
+      </script>
+</body>
+
+</html>
