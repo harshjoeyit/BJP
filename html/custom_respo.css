@@ -9,8 +9,8 @@
   } */
 
 [class*="col-"] {
-    background-color: rgb(201, 168, 245);
     float: left;
+    padding: 5px;
   }
 
 
@@ -100,6 +100,15 @@
     .col-xl-12 {width: 100%;}
 }
 
+.row {
+    margin: 10px;
+}
+/* prevents the float problem of overlapp */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 img {
     width: 100%;
