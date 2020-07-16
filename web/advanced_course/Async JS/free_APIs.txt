@@ -10,7 +10,7 @@
 7. https://opentdb.com/api.php?amount=1
 8. https://jsonplaceholder.typicode.com/
 9. https://ron-swanson-quotes.herokuapp.com/v2/quotes
-
+10. https://swapi.dev/api/people/9/
 
 ...........Key required ..................................
 1. https://api.themoviedb.org/3/movie/550?api_key=89affa2cbcf8890a6f1ad6287012fd67
