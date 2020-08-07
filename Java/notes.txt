@@ -1,0 +1,203 @@
+
+>> links 
+      - https://docs.oracle.com/javase/tutorial/java/concepts/object.html
+      - 
+
+>> instanceof 
+      - used when downcasting 
+      - returns false of object is null
+
+>> inheritence 
+      - You can declare a field in the subclass with the same name as the one in the superclass, thus hiding it (not recommended).
+      - You can write a new INSTANCE method in the subclass that has the same signature as the one in the superclass, thus overriding it.
+      - You can write a new STATIC method in the subclass that has the same signature as the one in the superclass, thus hiding it.
+
+      - java does not support multiple inheritence(inheriting from multiple classes at the same time)
+      to avoid ambiguity and name conflicts
+      - multiple inheritence only occurs when a class implements two interfaces with same default method 
+      and there are defined rules to do it
+
+>> overriding 
+      - An overriding method can also return a subtype of the type returned by the overridden method. This subtype is called a covariant return type.
+      - @Override annotation 
+            - used before the method we tend to Override
+            - raises an error if no such method occurs int parent class 
+            - increases readibility 
+
+>> polymorphism 
+      - Overloading (complie time polymorphism) or (static polymorphism / binding) or (Early binding)
+      - Overriding (runtime polymorphism) or (dynamic polymorphism / binding) or (Late binding)
+      - use case scenario
+            - We have a parent class and many subclasses implementing it. We can store object reference of all these objects
+            int the same array of parent type and stil use the overloaded methods seperately.
+
+>> constructors 
+      - two types 
+            - default 
+            - parametrized 
+      - called on their own on object creation 
+      - no argument, default constructor is ONLY generated when NO constructor is provided to class  
+      - if no access specifier is mentioned then construct is by default package private (i.e.) visible inside the packed only      
+      we can explicitly make constructors public
+      - If a subclass constructor invokes a constructor of its superclass, either explicitly 
+      or implicitly, you might think that there will be a whole chain of constructors called, 
+      all the way back to the constructor of Object. In fact, this is the case It is called 
+      CONSTRUCTOR CHAINING, and you need to be aware of it when there is a long line of class descent.
+      - You can use access modifiers in a constructor's declaration to control which other classes can call the constructor.
+
+>> Object Class 
+      - is parent class of all the classes 
+      - has a no argument constructor
+      - has following methods 
+            - protected Object clone() throws CloneNotSupportedException
+                  - Creates and returns a copy of this object.
+                  - The simplest way to make your class cloneable is to add implements Cloneable to your class's declaration. 
+                  then your objects can invoke the clone() method
+            - public boolean equals(Object obj)
+                  - Indicates whether some other object is "equal to" this one.
+                  - we override it the way we want to compare the objects 
+            - protected void finalize() throws Throwable
+                  - Called by the garbage collector on an object when garbage
+                  - collection determines that there are no more references to the object
+            - public final Class getClass()
+                  - Returns the runtime class of an object.
+            - public int hashCode()
+                  - Returns a hash code value for the object.
+                  - The value returned by hashCode() is the object's hash code, which is the 
+                  object's memory address in hexadecimal.
+            - public String toString()
+                  - Returns a string representation of the object.
+
+      - following are used while dealing with threads 
+            - public final void notify()
+            - public final void notifyAll()
+            - public final void wait()
+            - public final void wait(long timeout)
+            - public final void wait(long timeout, int nanos)
+
+>> super 
+      - cannot be used inside the static methods 
+      (error:  non-static variable super cannot be referenced 
+      from a static context)
+      - used for 
+            - parent class constructor
+            - parent class method
+            - parent class variable
+
+>> final 
+      - restrict usage of variables, methods and class 
+            - variables are constants 
+            - methods cannot be overridden
+            - class cannnot be inherited
+      - Methods called from constructors should generally be declared final. 
+      If a constructor calls a non-final method, a subclass may redefine 
+      that method with surprising or undesirable results.
+
+      - Note that you can also declare an entire class final. A class that 
+      is declared final cannot be subclassed. This is particularly useful,
+      for example, when creating an immutable class like the String class.
+
+
+>> abstract class 
+      - similar with interfaces
+            - it may or may not include abstract methods
+            - it cannot be instantiated 
+            - contains mixed methods (both implemented and abstract)
+      - features 
+            - all fields are automatically public, static, and final,
+            - can declare fields that are not static and final, 
+            and define public, protected, and private concrete methods.
+            - can extend only one class abstract or not
+            - In Java, we can have an abstract class without any abstract method. 
+            This allows us to create classes that cannot be instantiated,
+            but can only be inherited.
+      - use 
+            - You want to share code among several closely related classes.
+            - You expect that classes that extend your abstract class have many 
+            common methods or fields, or require access modifiers other than public 
+            (such as protected and private).
+            - You want to declare non-static or non-final fields. This enables 
+            you to define methods that can access and modify the state of the object 
+            to which they belong.
+
+      - An example of an abstract class in the JDK is AbstractMap
+
+>> interfaces 
+      - similar with abstract classes 
+            - it cannot be instantiated 
+            - contains mixed methods (both implemented and abstract)
+      - features 
+            - all fields are automatically public, static, and final,
+            - all methods are public by defalut
+            - can extend any number of interfaces 
+            - also several interfaces can be implemented by one class 
+
+      -use 
+            - You expect that unrelated classes would implement your interface. For example,
+             the interfaces Comparable and Cloneable are implemented by many unrelated classes.
+            - You want to specify the behavior of a particular data type, but not concerned 
+            about who implements its behavior.
+            - You want to take advantage of multiple inheritance of type.
+
+      - An example of a class in the JDK that implements several interfaces is HashMap, 
+      which implements the interfaces Serializable, Cloneable, and Map<K, V>. 
+
+
+>> package 
+      - A package is a namespace that organizes a set of related classes and interfaces. 
+      Conceptually you can think of packages as being similar to different folders on your computer.  
+      It makes sense to keep things organized in large softwares by placing related classes and interfaces into packages.
+
+
+>> JAVA API
+      - file system
+      - sockets 
+      - strings 
+      - GUI
+      - etc. 
+
+
+>> this 
+      - used to refer to current object 
+      - used in constructor chaining (calling one constructor from another)
+      - It can be passed as an argument in the method call.
+      - It can be passed as argument in the constructor call.
+      - Used to return the current class instance.
+      - Used to invoke current class method (implicitly)
+
+>> objects in java 
+      - go through these steps when created 
+            - declaration (reference variable created)
+            - instantiation (by new keyword)
+            - initialiazation (in constructors) 
+
+
+>> access modifiers
+      - top level 
+            - access modifier of a class can only be public or package private and nothing else 
+            - public 
+                  - classes declared public are visible everywhere
+            - package level (nno - modifier)
+                  - classes with no modifiers are visible inside the package only 
+      member level 
+            - public
+                  - open to world
+            - protected
+                  - class 
+                  - subclass in another package
+                  - package
+            - no modifier (default)
+                  - class 
+                  - package
+            - private
+                  - class 
+
+
+>> static
+      - variable
+      - method
+      - block
+      - nested class 
+
+
+      
