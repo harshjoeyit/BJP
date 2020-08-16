@@ -76,7 +76,7 @@ public class JavaClass
 {
   protected JavaClass(int x)
   {   }
-   public void main(String[] args) 
+   public static void main(String[] args) 
    {
 
     }
@@ -130,12 +130,23 @@ of blank final.
 
 
 
-14.  Differences between HashMap and HashTable in Java.
+14.          HashMap                                                       HashTable
 
-1. HashMap is non synchronized. It is not-thread safe and can’t be shared between many threads without proper synchronization code whereas Hashtable is synchronized. It is thread-safe and can be shared with many threads.
-2. HashMap allows one null key and multiple null values whereas Hashtable doesn’t allow any null key or value.
-3. HashMap is generally preferred over HashTable if thread synchronization is not needed
+1. HashMap is non synchronized.                                   1. Hashtable is synchronized. 
+It is not-thread safe and can’t be shared                         It is thread-safe and can be shared with many threads.
+between many threads without proper
+ synchronization code whereas 
+  
+2. HashMap allows one null key and multiple null values           2. Hashtable doesn’t allow any null key or value.
+whereas
 
+3. not sychronized so fast                                        3. Synchronized, so slow 
+
+4. HashMap is generally preferred over HashTable if thread synchronization is not needed
+
+
+ -- LinkedHashMap -> maintains the order of inserted elements 
+ -- TreeHashMap -> sorts the data acording to the key
 
 15. C++ features not in Java
       - all objects on heap

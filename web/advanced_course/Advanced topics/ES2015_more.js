@@ -244,6 +244,9 @@ function displayRandomTime() {
 //       });
 
 
+// READ ABOUT Promise.all() function 
+// it is really pick data from multiple apis using a single call 
+
 
 
 
@@ -276,7 +279,7 @@ for(val of pauseAndReturnValues(3)) {
 // using genrators with asynchronous code 
 // function* getMovieData(movieName) {
 //       console.log('starting');
-//       yield $(getJSON(`https://omdbapi.com?t=${movieName}&apikwy=thewdb`));
+//       yield $.getJSON(`https://omdbapi.com?t=${movieName}&apikwy=thewdb`);
 //       console.log('ending');
 // }
 

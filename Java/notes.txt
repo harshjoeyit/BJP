@@ -18,7 +18,8 @@
       and there are defined rules to do it
 
 >> overriding 
-      - An overriding method can also return a subtype of the type returned by the overridden method. This subtype is called a covariant return type.
+      - An overriding method can also return a subtype of the type returned by the overridden method. 
+      This subtype is called a covariant return type.
       - @Override annotation 
             - used before the method we tend to Override
             - raises an error if no such method occurs int parent class 
@@ -200,4 +201,76 @@
       - nested class 
 
 
-      
+>> volatile keyword
+
+Volatile keyword is used to modify the value of a variable by different threads. 
+It is also used to make classes thread safe. 
+It means that multiple threads can use a method and instance of the classes at the same time without any problem. 
+The volatile keyword can be used either with primitive type or objects.
+
+It guarantees that value of the volatile variable will always be read from the main memory, not from the local thread cache.. 
+The volatile keyword cannot be used with classes or methods. 
+However, it is used with variables. It also guarantees visibility and ordering. 
+It prevents the compiler from the reordering of code.
+
+It can be used as an alternative way of achieving synchronization in Java.
+
+List ans example 
+
+
+
+
+>>> volatile vs synchronization
+
+            Volatile Keyword	                                                       Synchronization Keyword
+
+1. Volatile keyword is a field modifier.	                        Synchronized keyword modifies code blocks and methods.
+2. The thread cannot be blocked for waiting in case of volatile.	Threads can be blocked for waiting in case of synchronized.
+3. It improves thread performance.	                              Synchronized methods degrade the thread performance.
+4. It synchronizes the value of one variable at a time between 
+5. thread memory and main memory.	                              It synchronizes the value of all variables between thread memory and main memory.
+6. Volatile fields are not subject to compiler optimization.	Synchronize is subject to compiler optimization.
+
+
+
+>> Collection Interface 
+      - methods 
+            - int size(), boolean isEmpty(), boolean contains(Object element), 
+            boolean add(E element), boolean remove(Object element), and Iterator<E> iterator()
+            - bulk operations 
+                  - containsAll, addAll, removeAll, clear
+      - traversing
+            -(1) using aggregate operations 
+            -(2) with the for-each construct and 
+            -(3) by using Iterators.
+
+      - Set Interface
+            - HashSet
+                  - which stores its elements in a hash table, is the best-performing implementation; 
+                  - however it makes no guarantees concerning the order of iteration. 
+            - TreeSet 
+                  - which stores its elements in a red-black tree, orders its elements based on their values; 
+                  - it is substantially slower than HashSet. 
+            - LinkedHashSet 
+                  - which is implemented as a hash table with a linked list running through it, 
+                  - orders its elements based on the order in which they were inserted into the set (insertion-order). 
+                  - slower that hash sets 
+
+
+
+>> Exception 
+      - Checked  
+            - compiler warns if some function throws this type of exception and we we have not 
+            mentioned it using the throws keyword like - "function myFunc(..) throws SomeException"
+            - IOException 
+            - ClassNotFoundException
+            - SQLException
+
+      - Unchecked 
+            - complier doesnt warn about them 
+            - in C++ all exceptions are Unchecked and compiler doesnt warn about any
+            - IndexOutOfBounds
+            - ArithmeticException
+            - NullPointerException
+                  - Thrown when an application attempts to use null in a case where an object is required. 
+                  Example: Calling the instance method of a null object

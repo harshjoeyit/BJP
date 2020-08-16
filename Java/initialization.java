@@ -13,6 +13,7 @@ in the source code.
 
 class One {
 	public static int var2;
+	// public static int var5 = new One().initClassVarByInstanceMethod();
 	public static int var1 = initClassVar();
 	private int var3;
 	private int var4;
@@ -39,6 +40,11 @@ class One {
 	{
 		System.out.println("initializer block");
 		var3 = 30;
+	}
+
+	public int initClassVarByInstanceMethod() {
+		System.out.println("initalize with new object");
+		return 11;
 	}
 
 	// final method
@@ -76,8 +82,10 @@ class Test {
 	public static void main(String[] args) {
 		// this line invokes the static block and private static method  
 		System.out.println(One.var1);
+		System.out.println("...........................");
 		// same with this line
 		System.out.println(Two.var2);
+		System.out.println("...........................");
 
 		// invokes the initializer block and constructor 
 		One obj = new One();
