@@ -462,4 +462,36 @@ public class Test
 
 
 
+// Compilation error - static function cannot access non-static function 
+class Main { 
+	public static void main(String args[]) {    
+	    System.out.println(fun()); 
+	}  
+	int fun() { 
+	    return 20; 
+	}  
+} 
+
+
+// Compilation Error
+// They cannot access this or super . For example, the following program fails in compilation.
+class Base { 
+    static int x = 0;        
+}    
+  
+class Derived extends Base  
+{ 
+   public static void fun() { 
+       System.out.println(super.x); // Compiler Error: non-static variable  
+                                  // cannot be referenced from a static context 
+   }    
+} 
+
+
+
+
+
+
+
+
 // SET 12, 13 remaining 

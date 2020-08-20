@@ -159,3 +159,15 @@ whereas
       - no destructor 
       - no global variable
       - no friend function 
+
+
+
+16. Difference b/w ArrayList and Vector
+
+            ArrayList	                                                            Vector
+1) ArrayList is not synchronized.	                                    1) Vector is synchronized.
+2) ArrayList increments 50% of current array size if the 	            2) Vector increments 100% means doubles the array size if 
+number of elements exceeds from its capacity.                             the total number of elements exceeds than its capacity.
+3) ArrayList is not a legacy class.It is introduced in JDK 1.2.	      3) Vector is a legacy class.
+4) ArrayList is FAST because it is non-synchronized.	                  4) Vector is SLOW because it is synchronized, i.e., in a multithreading environment, it holds the other threads in runnable or non-runnable state until current thread releases the lock of the object.
+5) ArrayList uses the Iterator interface to traverse the elements.	5) A Vector can use the Iterator interface or Enumeration interface to traverse the elements

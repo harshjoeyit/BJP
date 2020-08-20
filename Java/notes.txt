@@ -197,8 +197,9 @@
 >> static
       - variable
       - method
-      - block
+      - block (not in c++)
       - nested class 
+      - main difference is there is no local static variables in functions as in c++
 
 
 >> volatile keyword
@@ -274,3 +275,29 @@ List ans example
             - NullPointerException
                   - Thrown when an application attempts to use null in a case where an object is required. 
                   Example: Calling the instance method of a null object
+
+
+
+>> Blocking Queue
+      - A blocking queue is a queue that blocks when you try to dequeue from it and the queue 
+      is empty, or if you try to enqueue items to it and the queue is already full. A thread 
+      trying to dequeue from an empty queue is blocked until some other thread inserts an item 
+      into the queue. A thread trying to enqueue an item in a full queue is blocked until some 
+      other thread makes space in the queue, either by dequeuing one or more items or clearing 
+      the queue completely.
+
+>> Synchronization 
+      - It is thread-safe and can be shared with many threads.
+      - Non synchronized -It is not-thread safe and can't be shared between 
+      many threads without proper synchronization code.
+
+
+
+>> Friend Functions 
+      - Java doesnot have them
+      - they break the design, because they have to be declared outside the class 
+      - a similar functionality ca be found here 
+            - https://stackoverflow.com/questions/182278/is-there-a-way-to-simulate-the-c-friend-concept-in-java
+
+
+----> complete the output series on GFG
