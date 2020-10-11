@@ -78,6 +78,33 @@ class Two {
 	}
 }
 
+
+class Demo {
+	private int x, y;
+
+	Demo(int x, int y) {
+		this.x = x;
+		this.y = y;
+		System.out.println("2 args");
+	}
+
+	Demo(int x) {
+		this(x, 0);
+		System.out.println("1 args");
+	}
+
+	Demo() {
+		this(0, 0);
+		System.out.println("0 args");
+	}
+
+	// initialilzer block
+	// always executes before constructor 
+	{
+		System.out.println("init block");
+	}
+}
+
 class Test {
 	public static void main(String[] args) {
 		// this line invokes the static block and private static method  
@@ -89,6 +116,12 @@ class Test {
 
 		// invokes the initializer block and constructor 
 		One obj = new One();
+
+		// initializer block always runs the first, before any constructor 
+
+		// Demo t = new Test(3, 4);
+		// Demo t = new Test(3);
+		// Demo t = new Test();
 	}
 }
 

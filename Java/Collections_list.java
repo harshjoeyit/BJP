@@ -4,9 +4,11 @@ import java.util.*;
 class Test {
       public static void main(String[] args) {
 
-            // Classes implementing List interface 
-            // ArrayList 
-            // LinkedList
+            /* 
+                  List (interface)
+                   |
+                ArrayList (class)
+            */
 
             List<Integer> list = new ArrayList<>();
             list.add(4);

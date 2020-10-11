@@ -29,11 +29,11 @@ with an instance of its enclosing class and has direct access to that
  associated with an instance, it cannot define any static members 
  itself.
 
-An instance of InnerClass can exist only within an instance of 
+>> An instance of InnerClass can exist only within an instance of 
 OuterClass and has direct access to the methods and fields of 
 its enclosing instance.
 
-OuterClass.InnerClass innerObject = outerObject.new InnerClass()
+>> OuterClass.InnerClass innerObject = outerObject.new InnerClass()
 
 Static nested classes
 
@@ -42,7 +42,8 @@ directly to instance variables or methods defined in its enclosing
 class: it can use them only through an object reference.
 
 Static nested classes are accessed using the enclosing class name:
-OuterClass.StaticNestedClass nestedObject = new OuterClass.StaticNestedClass();
+
+>> OuterClass.StaticNestedClass nestedObject = new OuterClass.StaticNestedClass();
 
 
 When to use ??
@@ -50,6 +51,20 @@ When to use ??
 Use a non-static nested class (or inner class) if you require access 
 to an enclosing instance's non-public fields and methods. Use a static
  nested class if you don't require this access.
+
+
+
+Anonymous classes - 
+Anonymous classes usually extend subclasses or implement interfaces.
+Here, Type can be
+a superclass that an anonymous class extends
+an interface that an anonymous class implements
+
+Advantages - 
+In anonymous classes, objects are created whenever they are required. 
+That is, objects are created to perform some specific tasks.
+Here, an object of the anonymous class is created dynamically when we need to override the display() method.
+Anonymous classes also help us to make our code concise.
 */
 
 class Outer {
@@ -100,6 +115,24 @@ class Outer {
 	}
 }
 
+/* Anonymous Classes */
+class Parent {
+      public void display() {
+            System.out.println("Display in Parent");
+      }
+}
+
+class Child extends Parent {
+      public void useAnonymous() {
+            Parent obj = new Parent() {
+                  public void display() {
+                        System.out.println("Display in Anonymous");
+                  }
+            };
+            obj.display();
+      }
+}
+
 class Test {
 	public static void main(String[] args) {
 		Outer outerObj = new Outer();
@@ -110,5 +143,10 @@ class Test {
 
 		Outer.StaticNested nestedStaticObj = new Outer.StaticNested();
 		nestedStaticObj.methodInStatic();
+
+
+		System.out.print("............................");
+		Child obj = new Child();
+		obj.useAnonymous();
 	}
 }

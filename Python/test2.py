@@ -1,16 +1,8 @@
-from collections import OrderedDict
 
-od = OrderedDict()
-n = int(input())
+import os
 
-for _ in range(n) :
-      str = input()
-      if str in od:
-            od[str] += 1
-      else :
-            od[str] = 1
+db_user = os.environ.get('DB_USER')
+db_password = os.environ.get('DB_PASS')
 
-print(len(od))
-for item in od.values():
-      print(item, end=" ")
-print()
+print(db_user)
+print(db_password)

@@ -59,37 +59,51 @@ interface FireBreather extends Animal { }
 // }
 
 
-// >> If two or more independently defined default methods conflict, or a default method conflicts with an abstract method, 
-// then the Java compiler produces a compiler error. You must explicitly override the supertype methods.
+// >> If two or more independently defined default methods conflict, 
+// or a default method conflicts with an abstract method, 
+// then the Java compiler produces a compiler error. You must 
+// explicitly override the supertype methods. (here diamond problem is solved)
 
 
-public interface OperateCar {
-	// ...
-	default public int startEngine(EncryptedKey key) {
-	    // Implementation
-	}
-  }
-  public interface FlyCar {
-	// ...
-	default public int startEngine(EncryptedKey key) {
-	    // Implementation
-	}
-  }
+class EncryptedKey {
+      
+}
 
-  public class FlyingCar implements OperateCar, FlyCar {
-	// ...
-	public int startEngine(EncryptedKey key) {
-	    FlyCar.super.startEngine(key);
-	    OperateCar.super.startEngine(key);
-	}
-  }
+interface OperateCar {
+      // ...
+      default public void startEngine(EncryptedKey key) {
+            // Implementation
+            System.out.println("operate ");
+      }
+}
 
+interface FlyCar {
+      // ...
+      default public void startEngine(EncryptedKey key) {
+            // Implementation
+            System.out.println("fly");
+      }
+}
+
+class FlyingCar implements OperateCar, FlyCar {
+      // ...
+      public void startEngine(EncryptedKey key) {
+            FlyCar.super.startEngine(key);
+            OperateCar.super.startEngine(key);
+      }
+}
+
+class Test {
+      public static void main(String[] args) {
+            FlyingCar f = new FlyingCar();
+            f.startEngine(new EncryptedKey());
+      }
+}
 
 
 
 // >> Inherited instance methods from classes can override abstract interface methods. 
 // Consider the following interfaces and classes:
-int
 // >> Note: Static methods in interfaces are never inherited.
 
 public interface Mammal {

@@ -15,7 +15,7 @@ class Book {
 			return (ISBN == ((Book)obj).getISBN());
 		else
 			return false;
-	}
+	p.God bless .}
 
 	public void printClassName() {
 		System.out.println("The obj is of " + this.getClass());

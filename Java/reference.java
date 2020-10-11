@@ -63,7 +63,7 @@ class Test {
 	int val = 40;
 
 	public static void main(String[] args) {
-		Demo d1 = new Demo(10, 20);
+		@Override	Demo d1 = new Demo(10, 20);
 		System.out.println(d1.getSum());
 	
 		Demo d2 = d1;

@@ -6,10 +6,15 @@ import java.util.*;
 class Test {
 	public static void main(String[] args) throws InterruptedException {
 	
-		// implementation of Map interface
-		//  HashMap, 
-		// TreeMap, and 
-		// LinkedHashMap
+		/* 
+				Map (interface)
+			|				|
+		    extends 		   implements 
+		  SortedMap (interface)	    HashMap (class)
+			|				|
+		   implements 		   extends
+		     TreeMap (class)      LinkedHashMap (class)
+		*/
 
 		Map<String, Integer> m = new HashMap<String, Integer>();
 		String arr[] = {"Kelly", "Brook", "Oscar", "Wilde", "Oscar", "Brook"};

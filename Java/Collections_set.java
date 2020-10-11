@@ -7,10 +7,13 @@ import java.util.stream.*;
 class Test {
 	public static void main(String[] args) {
 		
-		// Implementations of Set Interface
-		// HashSet, 
-		// TreeSet, and 
-		// LinkedHashSet
+		/* 
+					Set (interface)
+			|			|			|
+		implements		   implements	     implements
+		HashSet(class)	LinkedHashSet(class)	TreeSet(class)
+
+		*/
 
 		int a[] = {4,20,15,15,1,4};
 		Set<Integer> s = new LinkedHashSet<>();

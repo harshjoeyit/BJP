@@ -20,11 +20,11 @@ In addition, an interface can contain constant declarations. All constant values
 an interface are implicitly public, static, and final. Once again, you can omit these modifiers.
 */
 
-interface Workable {
+interface Worker {
 	void doWork();
 }
 
-class Plumber implements Workable {
+class Plumber implements Worker {
 	
 	/**
 	This method is overriden.
@@ -36,7 +36,7 @@ class Plumber implements Workable {
 	// Other methods.
 }
 
-class Cook implements Workable {
+class Cook implements Worker {
 	
 	/**
 	This method is overriden.
@@ -48,7 +48,7 @@ class Cook implements Workable {
 	// Other methods.
 }
 
-class Electrician implements Workable {
+class Electrician implements Worker {
 	
 	/**
 	This method is overriden.
@@ -60,7 +60,7 @@ class Electrician implements Workable {
 	// Other methods.
 }
 
-class Painter implements Workable {
+class Painter implements Worker {
 	
 	/**
 	This method is overriden.
@@ -110,13 +110,13 @@ class RectanglePlus implements Relatable {
 
 class Test {
 	public static void main(String args[]) {
-		Workable[] workers = new Workable[4];
+		Worker[] workers = new Worker[4];
 		workers[0] = new Painter();
 		workers[1] = new Plumber();
 		workers[2] = new Cook();
 		workers[3] = new Electrician();
 		
-		for(Workable w: workers) {
+		for(Worker w: workers) {
 			w.doWork();
 		}
 

@@ -90,8 +90,10 @@ class TeslaCar extends Car implements Repairable{
       }
       
       /*
-		additional code to implement intreface 
-	*/
+	 * additional code to implement intreface
+	 * 
+	 * @Override
+	 */
 
 	public boolean isRepairable(){
 		// Tesla Car has a warranty time and can be repaired during that time only .... 
