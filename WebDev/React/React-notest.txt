@@ -1,8 +1,0 @@
- 
- React Notes
- 
- >> start 
- 	cd project 
- 	npm start 
- 	
- 
